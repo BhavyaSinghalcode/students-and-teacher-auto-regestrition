@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>title</title>
+    <link href="ab.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <H1>Theachers</H1>
+    <p id="a"></p>
+    <p id="b"></p>
+    <p id="c"></p>
+    <h1>Students</h1>
+    <p id="d"></p>
+    <p id="e"></p>
+    <p id="f"></p>
+    <script>
+    class candinet{
+        constructor(name,age,gender){
+            this.name=name;
+            this.age=age;
+            this.gender=gender
+        }
+        show(){
+            return "Name of his/her is "+this.name+" and the age is "+this.age+".The gender of his/her is "+this.gender
+        }
+    }
+    class student extends candinet{
+        constructor(name,age,gender,clas){
+            super(name,age,gender)
+            this.clas=clas
+        }
+    shows(){
+       return this.show() +".He/she is in class "+this.clas
+    }};
+
+
+    class teacher extends candinet{
+        constructor(name,age,gender,subject){
+            super(name,age,gender)
+            this.subject=subject
+        }
+    
+    showt(){
+        return this.show()+".She/he wants to teach "+this.subject
+    }};
+    var t1=new teacher("ritu",34,"female","hindi")
+    var t2=new teacher("aman",27,"male","physics")
+    var t3=new teacher("bhavya",29,"male","Math")
+    var s1=new student("atish",10,"male","6")
+    var s2=new student("pratham",13,"male","8")
+    var s3=new student("bhushit",15,"male","10")
+
+    document.getElementById("a").innerHTML=t1.showt()
+    document.getElementById("b").innerHTML=t2.showt()
+    document.getElementById("c").innerHTML=t3.showt()
+    document.getElementById("d").innerHTML=s1.shows()
+    document.getElementById("e").innerHTML=s2.shows()
+    document.getElementById("f").innerHTML=s3.shows()
+    </script>
+</body>
+</html>
